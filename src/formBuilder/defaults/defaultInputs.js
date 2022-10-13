@@ -34,8 +34,7 @@ const getInputCardBodyComponent = ({ type }: { type: string }) =>
     onChange: (newParams: Parameters) => void,
   }) {
     return (
-      <>
-      </>
+      <div/>
     );
   };
 

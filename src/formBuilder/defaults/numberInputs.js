@@ -153,8 +153,7 @@ function NumberField({
   onChange: (newParams: Parameters) => void,
 }) {
   return (
-    <>
-    </>
+    <div/>
   );
 }
 
