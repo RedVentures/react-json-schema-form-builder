@@ -82,68 +82,6 @@ function MultipleChoice({
   return (
     <div className='card-enum'>
       <h3>Possible Values</h3>
-      <FBCheckbox
-        onChangeValue={() => {
-          if (Array.isArray(parameters.enumNames)) {
-            // remove the enumNames
-            onChange({
-              ...parameters,
-              enumNames: null,
-            });
-          } else {
-            // create enumNames as a copy of enum values
-            onChange({
-              ...parameters,
-              enumNames: enumArray.map((val) => `${val}`),
-            });
-          }
-        }}
-        isChecked={Array.isArray(parameters.enumNames)}
-        label='Display label is different from value'
-        id={`${elementId}_different`}
-      />
-      <div
-        className={
-          containsUnparsableString || !enumArray.length ? classes.hidden : ''
-        }
-      >
-        <FBCheckbox
-          onChangeValue={() => {
-            if (containsString || !isNumber) {
-              // attempt converting enum values into numbers
-              try {
-                const newEnum = enumArray.map((val) => {
-                  let newNum = 0;
-                  if (val) newNum = parseFloat(val) || 0;
-                  if (Number.isNaN(newNum))
-                    throw new Error(`Could not convert ${val}`);
-                  return newNum;
-                });
-                setIsNumber(true);
-                onChange({
-                  ...parameters,
-                  enum: newEnum,
-                });
-              } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error(error);
-              }
-            } else {
-              // convert enum values back into strings
-              const newEnum = enumArray.map((val) => `${val || 0}`);
-              setIsNumber(false);
-              onChange({
-                ...parameters,
-                enum: newEnum,
-              });
-            }
-          }}
-          isChecked={isNumber}
-          disabled={containsUnparsableString}
-          label='Force number'
-          id={`${elementId}_forceNumber`}
-        />
-      </div>
       <CardEnumOptions
         initialValues={enumArray}
         names={
@@ -197,6 +135,17 @@ const defaultInputs: { [string]: FormInput } = {
     type: 'string',
     cardBody: getInputCardBodyComponent({ type: 'date' }),
     modalBody: CardDefaultParameterInputs,
+  },
+  str: {
+    displayName: 'String',
+    matchIf: [
+      {
+        types: ['string'],
+      },
+    ],
+    defaultUiSchema: {},
+    type: 'string',
+    cardBody: getInputCardBodyComponent({ type: 'str' }),
   },
   time: {
     displayName: 'Time',
