@@ -1696,7 +1696,10 @@ export function getNewElementDefaultDataOptions(
     return {
       type: 'string',
       default: '',
-      title:''
+      title:'',
+      meta: {
+        sensitivity: 'internal'
+      }
     };
   }
 }
