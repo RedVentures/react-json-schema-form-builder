@@ -1,11 +1,11 @@
 {
   "name": "@redventures/react-json-schema-form-builder",
-  "version": "2.10.0",
+  "version": "2.10.1",
   "description": "React Component for visually configuring a JSON Schema-based form",
   "author": {
     "name": "Alex Hill",
     "email": "alhill@redventures.com",
-    "url":""
+    "url": ""
   },
   "license": "Apache-2.0",
   "repository": "redventures/react-json-schema-form-builder",
