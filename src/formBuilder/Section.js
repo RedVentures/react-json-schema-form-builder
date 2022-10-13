@@ -301,72 +301,6 @@ export default function Section({
                 <FormFeedback>{keyError}</FormFeedback>
               </FormGroup>
             </div>
-            <div className='section-entry' data-test='section-display-name'>
-              <h5>
-                Section Display Name{' '}
-                <Tooltip
-                  text={
-                    mods &&
-                    mods.tooltipDescriptions &&
-                    mods.tooltipDescriptions &&
-                    typeof mods.tooltipDescriptions.cardSectionDisplayName ===
-                      'string'
-                      ? mods.tooltipDescriptions.cardSectionDisplayName
-                      : 'The name of the form section that will be shown to users of the form.'
-                  }
-                  id={`${elementId}_titleinfo`}
-                  type='help'
-                />
-              </h5>
-              <Input
-                value={schemaData.title || ''}
-                placeholder='Title'
-                type='text'
-                onChange={(ev: SyntheticInputEvent<HTMLInputElement>) =>
-                  onChange(
-                    {
-                      ...schema,
-                      title: ev.target.value,
-                    },
-                    uischema,
-                  )
-                }
-                className='card-text'
-              />
-            </div>
-            <div className='section-entry' data-test='section-description'>
-              <h5>
-                Section Description{' '}
-                <Tooltip
-                  text={
-                    mods &&
-                    mods.tooltipDescriptions &&
-                    mods.tooltipDescriptions &&
-                    typeof mods.tooltipDescriptions.cardSectionDescription ===
-                      'string'
-                      ? mods.tooltipDescriptions.cardSectionDescription
-                      : 'A description of the section which will be visible on the form.'
-                  }
-                  id={`${elementId}_descriptioninfo`}
-                  type='help'
-                />
-              </h5>
-              <Input
-                value={schemaData.description || ''}
-                placeholder='Description'
-                type='text'
-                onChange={(ev: SyntheticInputEvent<HTMLInputElement>) =>
-                  onChange(
-                    {
-                      ...schema,
-                      description: ev.target.value,
-                    },
-                    uischema,
-                  )
-                }
-                className='card-text'
-              />
-            </div>
             <Alert
               style={{
                 display: unsupportedFeatures.length === 0 ? 'none' : 'block',
@@ -438,7 +372,7 @@ export default function Section({
           </div>
           <div className='section-footer'>
             <Add
-              tooltipDescription={((mods || {}).tooltipDescriptions || {}).add}
+              tooltipDescription={'Add Property'}
               addElem={(choice: string) => {
                 if (choice === 'card') {
                   addCardObj({
@@ -523,7 +457,7 @@ export default function Section({
       </Collapse>
       {addElem ? (
         <Add
-          tooltipDescription={((mods || {}).tooltipDescriptions || {}).add}
+          tooltipDescription={'Add Property'}
           addElem={(choice: string) => addElem(choice)}
         />
       ) : (
