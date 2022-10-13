@@ -133,7 +133,7 @@ export default function CardGeneralParameterInputs({
           }`}
         >
           <h5>
-            {"Sensitivity"}
+            {"Sensitivity "}
             <Tooltip
               text={'Select the sensitivity for this column'}
               id={`${elementId}-sensitivity`}
@@ -142,7 +142,7 @@ export default function CardGeneralParameterInputs({
           </h5>
           <Select
             value={sensOpts.find(({value})=>value===parameters?.meta?.sensitivity) || null}
-            placeholder={"Select sensitivity"}
+            placeholder={"Sensitivity"}
             options={sensOpts}
             onChange={({value: sensitivity}: any) => {
               onChange({
@@ -232,6 +232,7 @@ export default function CardGeneralParameterInputs({
               }
               onChange({
                 ...newProps,
+                ...(parameters?.meta ? {meta: {sensitivity: parameters?.meta?.sensitivity}} : {}),
                 title: parameters.name,
                 default: newProps.default || '',
                 type: newProps.type || categoryType(newCategory, allFormInputs),

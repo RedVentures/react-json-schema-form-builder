@@ -208,15 +208,6 @@ export default function Card({
           />
         </div>
         <div className={classes.cardInteractions}>
-          <span id={`${elementId}_editinfo`}>
-            <FontAwesomeIcon
-              icon={faPencilAlt}
-              onClick={() => setModalOpen(true)}
-            />
-          </span>
-          <UncontrolledTooltip placement='top' target={`${elementId}_editinfo`}>
-            Additional configurations for this form element
-          </UncontrolledTooltip>
           <span id={`${elementId}_trashinfo`}>
             <FontAwesomeIcon icon={faTrash} onClick={onDelete || (() => {})} />
           </span>
