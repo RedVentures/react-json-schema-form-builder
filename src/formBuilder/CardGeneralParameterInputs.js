@@ -78,7 +78,7 @@ export default function CardGeneralParameterInputs({
         {showObjectNameInput && (
           <div className='card-entry'>
             <h5>
-              {`${objectNameLabel} `}
+              {`Name `}
               <Tooltip
                 text={
                   mods &&
