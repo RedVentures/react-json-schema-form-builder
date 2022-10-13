@@ -143,12 +143,8 @@ export default function CardGeneralParameterInputs({
           <Select
             value={sensOpts.find(({value})=>value===parameters?.meta?.sensitivity) || null}
             placeholder={"Select sensitivity"}
-            options={[
-              { value: 'internal', label: 'Internal' },
-              { value: 'sensitive', label: 'Sensitive' },
-              { value: 'restricted', label: 'Restricted' },
-            ]}
-            onChange={(sensitivity: any) => {
+            options={sensOpts}
+            onChange={({value: sensitivity}: any) => {
               onChange({
                 ...parameters,
                 meta: {sensitivity}

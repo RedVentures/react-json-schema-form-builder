@@ -153,21 +153,8 @@ function NumberField({
   onChange: (newParams: Parameters) => void,
 }) {
   return (
-    <React.Fragment>
-      <h5>Default number</h5>
-      <Input
-        value={parameters.default}
-        placeholder='Default'
-        type='number'
-        onChange={(ev: SyntheticInputEvent<HTMLInputElement>) =>
-          onChange({
-            ...parameters,
-            default: parseFloat(ev.target.value),
-          })
-        }
-        className='card-number'
-      />
-    </React.Fragment>
+    <>
+    </>
   );
 }
 

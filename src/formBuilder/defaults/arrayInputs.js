@@ -127,7 +127,7 @@ function getInnerCardComponent({
             }
           }}
           isChecked={newDataProps.items.type === 'object'}
-          label='Section'
+          label='Object Element'
           id={`${elementId}_issection`}
         />
         {generateElementComponentsFromSchemas({

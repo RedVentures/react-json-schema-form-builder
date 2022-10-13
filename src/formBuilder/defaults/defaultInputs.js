@@ -34,18 +34,8 @@ const getInputCardBodyComponent = ({ type }: { type: string }) =>
     onChange: (newParams: Parameters) => void,
   }) {
     return (
-      <React.Fragment>
-        <h5>Default value</h5>
-        <Input
-          value={parameters.default || ''}
-          placeholder='Default'
-          type={type}
-          onChange={(ev: SyntheticInputEvent<HTMLInputElement>) =>
-            onChange({ ...parameters, default: ev.target.value })
-          }
-          className='card-text'
-        />
-      </React.Fragment>
+      <>
+      </>
     );
   };
 
@@ -256,10 +246,10 @@ const defaultInputs: { [string]: FormInput } = {
     modalBody: CardDefaultParameterInputs,
   },
   dropdown: {
-    displayName: 'Dropdown',
+    displayName: 'Enum',
     matchIf: [
       {
-        types: ['string', 'number', 'integer', 'array', 'boolean', 'null'],
+        types: ['string', 'number', 'integer'],
         enum: true,
       },
     ],
