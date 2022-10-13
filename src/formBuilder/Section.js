@@ -402,18 +402,6 @@ export default function Section({
             />
           </div>
           <div className='section-interactions'>
-            <span id={`${elementId}_editinfo`}>
-              <FontAwesomeIcon
-                icon={faPencilAlt}
-                onClick={() => setModalOpen(true)}
-              />
-            </span>
-            <UncontrolledTooltip
-              placement='top'
-              target={`${elementId}_editinfo`}
-            >
-              Additional configurations for this form element
-            </UncontrolledTooltip>
             <span id={`${elementId}_trashinfo`}>
               <FontAwesomeIcon
                 icon={faTrash}
