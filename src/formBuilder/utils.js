@@ -974,7 +974,8 @@ export function addCardObj(parameters: {
   const dataOptions = getNewElementDefaultDataOptions(i, mods);
 
   const newElement = ({
-    name: `${DEFAULT_INPUT_NAME}${i}`,
+    name: `newColumn-${i}`,
+    title: '',
     required: false,
     dataOptions: dataOptions,
     uiOptions: (mods && mods.newElementDefaultUiSchema) || {},
@@ -1693,9 +1694,9 @@ export function getNewElementDefaultDataOptions(
     return { ...mods.newElementDefaultDataOptions, ...{ title: title } };
   } else {
     return {
-      title: `New Input ${i}`,
       type: 'string',
       default: '',
+      title:''
     };
   }
 }

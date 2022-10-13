@@ -76,11 +76,11 @@ export default function Add({
             options={[
               {
                 value: 'card',
-                label: 'Form element',
+                label: 'Indexable Column',
               },
               {
                 value: 'section',
-                label: 'Form section',
+                label: 'Object Column',
               },
             ]}
             onChange={(selection) => {
