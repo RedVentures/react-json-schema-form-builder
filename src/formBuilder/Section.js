@@ -186,7 +186,7 @@ export default function Section({
         title={
           <React.Fragment>
             <span onClick={() => setCardOpen(!cardOpen)} className='label'>
-              {schemaData.title || keyName}{' '}
+              {keyName}{' '}
               {parent ? (
                 <Tooltip
                   text={`Depends on ${parent}`}

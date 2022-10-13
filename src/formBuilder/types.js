@@ -117,6 +117,7 @@ export type DataOptions = {|
   description?: string,
   $ref?: string,
   default?: string,
+  meta?: any
 |};
 
 // optional properties that can add custom features to the form builder

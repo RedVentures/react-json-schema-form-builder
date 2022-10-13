@@ -145,7 +145,7 @@ export default function Card({
         title={
           <React.Fragment>
             <span onClick={() => setCardOpen(!cardOpen)} className='label'>
-              {componentProps.title || componentProps.name}{' '}
+              {componentProps.name}{' '}
               {componentProps.parent ? (
                 <Tooltip
                   text={`Depends on ${(componentProps.parent: any)}`}

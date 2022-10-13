@@ -123,6 +123,35 @@ export default function CardGeneralParameterInputs({
             </FormGroup>
           </div>
         )}
+        <div
+          className={`card-entry ${
+            parameters.$ref === undefined ? '' : 'disabled-input'
+          }`}
+        >
+          <h5>
+            {"Sensitivity"}
+            <Tooltip
+              text={'Select the sensitivity for this column'}
+              id={`${elementId}-sensitivity`}
+              type='help'
+            />
+          </h5>
+          <Select
+            value={{
+              value: parameters?.meta?.sensitivity,
+              label: parameters?.meta?.sensitivity,
+            }}
+            placeholder={inputTypeLabel}
+            options={availableInputTypes()}
+            onChange={(sensitivity: any) => {
+              onChange({
+                ...parameters,
+                meta: {sensitivity}
+              });
+            }}
+            className='card-select'
+          />
+        </div>
       </div>
       <div className='card-entry-row'>
         <div
@@ -202,7 +231,7 @@ export default function CardGeneralParameterInputs({
               }
               onChange({
                 ...newProps,
-                title: '',
+                title: parameters.name,
                 default: newProps.default || '',
                 type: newProps.type || categoryType(newCategory, allFormInputs),
                 category: newProps.category || newCategory,
