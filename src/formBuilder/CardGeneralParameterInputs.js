@@ -67,7 +67,11 @@ export default function CardGeneralParameterInputs({
       .map((key) => ({ value: key, label: categoryMap[key] }))
       .sort((a, b) => a.label.localeCompare(b.label));
   };
-
+  const sensOpts = [
+              { value: 'internal', label: 'Internal' },
+              { value: 'sensitive', label: 'Sensitive' },
+              { value: 'restricted', label: 'Restricted' },
+            ];
   return (
     <React.Fragment>
       <div className='card-entry-row'>
@@ -137,12 +141,13 @@ export default function CardGeneralParameterInputs({
             />
           </h5>
           <Select
-            value={{
-              value: parameters?.meta?.sensitivity,
-              label: parameters?.meta?.sensitivity,
-            }}
-            placeholder={inputTypeLabel}
-            options={availableInputTypes()}
+            value={sensOpts.find(({value})=>value===parameters?.meta?.sensitivity) || null}
+            placeholder={"Select sensitivity"}
+            options={[
+              { value: 'internal', label: 'Internal' },
+              { value: 'sensitive', label: 'Sensitive' },
+              { value: 'restricted', label: 'Restricted' },
+            ]}
             onChange={(sensitivity: any) => {
               onChange({
                 ...parameters,
