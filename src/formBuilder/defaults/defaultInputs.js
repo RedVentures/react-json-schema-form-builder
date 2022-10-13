@@ -136,17 +136,6 @@ const defaultInputs: { [string]: FormInput } = {
     cardBody: getInputCardBodyComponent({ type: 'date' }),
     modalBody: CardDefaultParameterInputs,
   },
-  str: {
-    displayName: 'String',
-    matchIf: [
-      {
-        types: ['string'],
-      },
-    ],
-    defaultUiSchema: {},
-    type: 'string',
-    cardBody: getInputCardBodyComponent({ type: 'str' }),
-  },
   time: {
     displayName: 'Time',
     matchIf: [

@@ -33,7 +33,8 @@
     "test:lint": "eslint .",
     "test:prettier": "prettier -c src && prettier -c example/src",
     "test:unit": "jest --env=jsdom --coverage --coverageDirectory=coverage/",
-    "test:watch": "jest --watch --env=jsdom"
+    "test:watch": "jest --watch --env=jsdom",
+    "pub": "npm run build && git add . && git commit -m 'publish' && npm version patch && npm publish"
   },
   "peerDependencies": {
     "bootstrap": "^4.6.0 || ^5.1.3",
