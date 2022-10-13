@@ -126,7 +126,7 @@ function getInnerCardComponent({
               });
             }
           }}
-          isChecked={newDataProps.items.type === 'object'}
+          isChecked={newDataProps?.items?.type === 'object'}
           label='Object Element'
           id={`${elementId}_issection`}
         />
