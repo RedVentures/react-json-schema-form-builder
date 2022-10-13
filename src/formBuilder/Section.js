@@ -255,9 +255,9 @@ export default function Section({
             ) : (
               ''
             )}
-            <div className='section-entry' data-test='section-object-name'>
+            <div className='section-entry' data-test='section-object-name' style={{width:"100%"}}>
               <h5>
-                Section Object Name{' '}
+                Object Name{' '}
                 <Tooltip
                   text={
                     mods &&

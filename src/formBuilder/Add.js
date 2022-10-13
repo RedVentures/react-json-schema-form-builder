@@ -57,7 +57,7 @@ export default function Add({
         />
       </span>
       <UncontrolledTooltip placement='top' target={`${elementId}_add`}>
-        {tooltipDescription || 'Create new form element'}
+        {'Add Property'}
       </UncontrolledTooltip>
       <Popover
         placement='bottom'
